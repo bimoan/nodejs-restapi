@@ -3,26 +3,26 @@ const Contact = require('../modules/ContactModule')
 class ContactController{
 
     static create(req, res){
-        res.send('Halo ini respon dari controller')
+        // res.send('Halo ini respon dari controller')
 
-//         const NewData = {
-//             name: req.body.name,
-//             phone: req.body.phone,
-//             company: req.body.company,
-//             active: Boolean(req.body.active) || true
-//         }
+        const NewData = {
+            name: req.body.name,
+            phone: req.body.phone,
+            company: req.body.company,
+            active: Boolean(req.body.active) || true
+        }
 
-//         Contact.create(NewData)
-//             .then(response => {
-//                 res.status(200).json({
-//                     message: 'Contact berhasil ditambahkan',
-//                     response
-//                 })
-//             })
-//             .catch(err => {
-//                 res.sendstatus(500)
-//             })
-//     }
+        Contact.create(NewData)
+            .then(response => {
+                res.status(200).json({
+                    message: 'Contact berhasil ditambahkan',
+                    response
+                })
+            })
+            .catch(err => {
+                res.sendstatus(500)
+            })
+    }
 
     static updatedataByid(req, res){
 
